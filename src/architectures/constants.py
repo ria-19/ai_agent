@@ -1,0 +1,2 @@
+FINISH = "finish"
+ERROR = "error"

@@ -13,7 +13,7 @@ def test_parse_llm_output_happy_path():
     Action Input: weather in San Francisco
     """
     expected_thought = "The user wants to know the weather in a city. I should use the search tool for this."
-    expected_action = "Search"
+    expected_action = "search"
     expected_action_input = "weather in San Francisco"
     
     thought, action, action_input = parse_llm_output(llm_output)
@@ -32,7 +32,7 @@ def test_parse_llm_output_missing_action():
     thought, action, action_input = parse_llm_output(llm_output)
     
     assert thought == ""  
-    assert action == "Error"
+    assert action == "error"
     assert "Could not parse action from" in action_input
 
 def test_parse_llm_output_multiline_action_input():
@@ -67,7 +67,7 @@ def test_parse_llm_output_only_action_is_present():
     thought, action, action_input = parse_llm_output(llm_output)
     
     assert thought == ""
-    assert action == "Finish"
+    assert action == "finish"
     assert action_input == ""
 
 def test_parse_llm_output_extra_whitespace():
@@ -80,7 +80,7 @@ def test_parse_llm_output_extra_whitespace():
     Action Input:   some query with spaces  
     """
     expected_thought = "I should be able to handle extra spaces."
-    expected_action = "Search"
+    expected_action = "search"
     expected_action_input = "some query with spaces"
 
     thought, action, action_input = parse_llm_output(llm_output)
