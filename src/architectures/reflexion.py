@@ -1,3 +1,17 @@
+"""
+AI Agent Framework - Hybrid Architecture
+Author: Riya Sangwan
+License: MIT (See LICENSE file)
+Version: v0.1.0 Stable
+
+This file is part of the AI Agent Framework:
+https://github.com/ria-19/ai_agent
+
+TL;DR: Use freely, modify, redistribute, just retain this notice.
+
+Recommended attribution for forks or derivative works.
+"""
+
 import logging
 from typing import List, Dict, Any, Optional
 

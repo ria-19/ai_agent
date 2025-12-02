@@ -154,7 +154,7 @@ Building an agent is easy. Making it **reliable** is hard. Here's what we learne
 ### 1. The Model Drift Problem
 **Challenge**: Migrating from local Llama to cloud APIs revealed "chatter"—models would output `<think>` blocks, markdown fences, or conversational asides that broke JSON parsers.
 
-**War Story**: On Dec 15, 2024, we hit a 100% crash rate when Llama 3.3 started prefixing responses with `Let me think through this...` instead of valid JSON.
+**War Story**: On Oct 15, 2025, we hit a 100% crash rate when Llama 3.3 started prefixing responses with `Let me think through this...` instead of valid JSON.
 
 **Solution**: Built a **battle-hardened parser** with regex stripping:
 ```python
@@ -340,27 +340,27 @@ Outputs detailed latency/cost metrics to `benchmarks/results.json`.
 
 ## 🗺️ Roadmap
 
-### ✅ v0.1: Foundation (Completed Dec 2024)
+### ✅ v0.1: Foundation 
 - [x] Sequential ReAct agent implementation
 - [x] Tool abstraction layer (Calculator, Search, Web Browse)
 - [x] LLM interface with provider switching
 - [x] Basic error handling
 
-### ✅ v0.2: Self-Correction (Current Stable)
+### ✅ v0.2: Self-Correction 
 - [x] Hybrid architecture (Groq + Google)
 - [x] Reflexion orchestrator with trial loops
 - [x] Battle-hardened parser (markdown/chatter stripping)
 - [x] Benchmarking suite with cost tracking
 - [x] Exponential backoff for API resilience
 
-### 🚧 v0.3: Intelligence Layer (In Progress - Feb 2025)
+### 🚧 v0.3: Intelligence Layer 
 - [ ] **Long-Term Memory**: RAG with Pinecone/Weaviate for cross-session learning
 - [ ] **Adaptive Routing**: Complexity classifier (embedding-based) to choose ReAct vs Reflexion
 - [ ] **Semantic Caching**: Redis layer to avoid redundant LLM calls
 - [ ] **Tool Output Compression**: Use Llama 3.2-3B to summarize verbose tool responses
 - [ ] **Observability**: OpenTelemetry tracing for latency profiling
 
-### 📅 v0.4: Production Hardening (Target: Q2 2025)
+### 📅 v0.4: Production Hardening
 - [ ] Horizontal scaling: Multi-agent task distribution
 - [ ] Tool marketplace: Dynamic tool loading (50+ tools)
 - [ ] Automated evaluation: DSPy-based scoring (replace manual validation)
@@ -460,15 +460,23 @@ Contributions welcome! Focus areas:
 
 ## 📝 License
 
-MIT License - See [LICENSE](LICENSE) for details.
+MIT License - See [LICENSE](LICENSE) for full details.
 
 **TL;DR**: Use this commercially, modify freely, just keep the license notice.
+
+**Attribution**:  
+If you use, modify, or redistribute any part of this project, please retain attribution to the original author:
+
+> AI Agent Framework – Hybrid Architecture  
+> Author: Riya Sangwan  
+> Repository: [https://github.com/ria-19/ai_agent
+](https://github.com/ria-19/ai_agent)
 
 ---
 
 ## 💬 Contact
 
-**Author**: [Riya Sangwan]  
+**Author**: Riya Sangwan
 **Email**: riya.sangwandec19@example.com  
 **LinkedIn**: [linkedin.com/in/riyasangwan/](https://linkedin.com/in/riyasangwan/)  
 
